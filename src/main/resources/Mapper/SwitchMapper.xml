@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.monitor.dao.SwitchMapper">
+  <resultMap id="BaseResultMap" type="com.example.monitor.pojo.Switch">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="switch_name" jdbcType="VARCHAR" property="switchName" />
+  </resultMap>
+
+    <select id="humidList" parameterType="com.example.monitor.DTO.SwitchDTO" resultType="com.example.monitor.DTO.SwitchDTO">
+          SELECT
+        s.switch_name,
+        N.name,
+        N.humidity,
+        N.time
+     FROM
+     switch AS s LEFT JOIN information AS N ON s.id=N.switch_id
+
+        </select>
+    <select id="selectList" parameterType="com.example.monitor.DTO.SwitchDTO" resultType="com.example.monitor.DTO.SwitchDTO">
+         select
+         n.temp,
+         n.humidity,
+         sd.detail_name
+        from
+        switch AS s LEFT JOIN switchDetail As sd ON s.id=sd.switch_id
+        LEFT JOIN information AS n ON sd.id=n.switchDetail_id
+        HAVING detail_name="01"
+        </select>
+
+   <!-- <select id="tempList" parameterType="com.example.monitor.DTO.SwitchDTO" resultType="com.example.monitor.DTO.SwitchDTO">
+
+        SELECT
+        s.switch_name,
+        N.name,
+        N.humidity,
+        N.time,
+        s.voltage_level,
+        s.Interval_name
+        FROM
+        switch AS s LEFT JOIN information AS N ON
+        s.id=N.switch_id
+    where
+        s.switch_name like #{switchName}
+    </select>-->
+
+</mapper>

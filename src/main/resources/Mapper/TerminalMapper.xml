@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.monitor.dao.TerminalMapper">
+  <resultMap id="BaseResultMap" type="com.example.monitor.pojo.Terminal">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="terminal_name" jdbcType="VARCHAR" property="terminalName" />
+  </resultMap>
+  <select id="tempList" parameterType="com.example.monitor.DTO.TerminalDTO" resultType="com.example.monitor.DTO.TerminalDTO">
+         select td.name,t.time,td.voltage_level voltageLevel,td.Interval_name IntervalName,t.value_type valueType,value,t.upload_time uploadTime
+ FROM terminalDetail AS td LEFT JOIN terminal t on td.id=t.terminal_id
+ where name  LIKE  #{name}
+        </select>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.monitor.dao.MechanicalMapper">
+  <resultMap id="BaseResultMap" type="com.example.monitor.pojo.Mechanical">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="closingCurrent" jdbcType="DECIMAL" property="closingcurrent" />
+    <result column="openingCurrent" jdbcType="DECIMAL" property="openingcurrent" />
+    <result column="energyCurrent" jdbcType="DECIMAL" property="energycurrent" />
+    <result column="closingVoltage" jdbcType="DECIMAL" property="closingvoltage" />
+    <result column="openingVoltage" jdbcType="DECIMAL" property="openingvoltage" />
+    <result column="energyVoltage" jdbcType="DECIMAL" property="energyvoltage" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="switchDetail_id" jdbcType="INTEGER" property="switchdetailId" />
+  </resultMap>
+
+
+</mapper>

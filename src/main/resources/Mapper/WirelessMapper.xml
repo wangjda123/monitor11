@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.monitor.dao.WirelessMapper">
+  <resultMap id="BaseResultMap" type="com.example.monitor.pojo.Wireless">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="wireless_name" jdbcType="VARCHAR" property="wirelessName" />
+    <result column="phaseA" jdbcType="DECIMAL" property="phasea" />
+    <result column="phaseB" jdbcType="DECIMAL" property="phaseb" />
+    <result column="phaseC" jdbcType="DECIMAL" property="phasec" />
+    <result column="switchDetail_id" jdbcType="INTEGER" property="switchdetailId" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+</mapper>

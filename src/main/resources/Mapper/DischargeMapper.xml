@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.monitor.dao.DischargeMapper">
+  <resultMap id="BaseResultMap" type="com.example.monitor.pojo.Discharge">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ultrasonic" jdbcType="INTEGER" property="ultrasonic" />
+    <result column="geoacoustic" jdbcType="INTEGER" property="geoacoustic" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="switchDetail_id" jdbcType="INTEGER" property="switchdetailId" />
+  </resultMap>
+</mapper>
